@@ -1,11 +1,5 @@
 # ATO Log Source Validation Tracker
 
-> **Purpose:** Track every Azure resource workload from the MS-ISR Default Logging Configuration wiki — what was expected, what we deployed in the Sentinel workbook, and whether data is flowing.  
-> **Wiki Source:** Azure DevOps — MSISR / Default Logging Configuration (John Blevins)  
-> **Workbook:** `generate_workbook.py` → `msisr.json` → `deploy_workbook.ps1`  
-> **Workspace:** `log-c3elz7-usgovvirginia-001`  
-> **Last Updated:** 2026-03-03  
-> **Total Entries:** 70 across 22 workloads
 
 ---
 
