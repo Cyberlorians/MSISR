@@ -26,26 +26,26 @@
 |---|-------------|----------|---------|--------|--------|
 | 1 | — | Entra ID | 12 | ✅ Complete | Tenant |
 | 2 | — | Azure Activity | 1 | ✅ Complete | 3 Subscriptions |
-| 3 | AA | Azure Automation Account | 1 | ✅ Complete | Platform Mgmt Sub |
-| 4 | ACR | Azure Container Registry | 2 | ✅ Complete | Platform Mgmt Sub |
+| 3 | AA | Azure Automation Account | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
+| 4 | ACR | Azure Container Registry | 2 | ⚠️ Needs Review | Platform Mgmt Sub |
 | 5 | ADT | Azure Data Transfer | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
 | 6 | AKS | Azure Kubernetes Service | 1 | ⚠️ Needs Review | Multiple Subs |
 | 7 | APIMgmt | Azure API Management | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
-| 8 | AppGroup | AVD AppGroup | 3 | ✅ Complete | 2 Subscriptions |
-| 9 | ApplicationGateway | Azure Application Gateway | 3 | ✅ Complete | No resources deployed |
-| 10 | Firewall | Azure Firewall | 4 | ✅ Complete | Platform Mgmt Sub |
-| 11 | HostPool | Azure Virtual Desktop | 11 | ✅ Complete | 2 Subscriptions |
-| 12 | KeyVault | Azure Key Vault | 1 | ✅ Complete | 3 Subscriptions |
-| 13 | LoadBalancer | Azure Load Balancer | 1 | ✅ Complete | Schema only |
-| 14 | loganalytics | Log Analytics Workspace | 5 | ✅ Complete | Tenant + SIEM Sub |
-| 15 | NIC | Network Interface | 1 | ✅ Complete | AzureMetrics (19 NICs) |
-| 16 | NSG | Network Security Group | 2 | ✅ Complete | 2 Subscriptions |
-| 17 | PublicIP | Public IP Address | 3 | ✅ Complete | Event Hub only (not LA) |
-| 18 | RecoveryVault | Azure Recovery Services Vault | 9 | ✅ Complete | Multiple Subs |
-| 19 | SearchServices | Azure Cognitive Search | 1 | ✅ Complete | Platform Mgmt Sub |
-| 20 | VNetGW | Virtual Network Gateway | 1 | ✅ Complete | ❌ Not Configured |
-| 21 | Workspace | AVD Workspace | 4 | ✅ Complete | 2 Subscriptions |
-| 22 | — | VNET Flow Logs | 2 | ✅ Complete | Multiple Subs |
+| 8 | AppGroup | AVD AppGroup | 3 | ⚠️ Needs Review | 2 Subscriptions |
+| 9 | ApplicationGateway | Azure Application Gateway | 3 | ⚠️ Needs Review | No resources deployed |
+| 10 | Firewall | Azure Firewall | 4 | ⚠️ Needs Review | Platform Mgmt Sub |
+| 11 | HostPool | Azure Virtual Desktop | 11 | ⚠️ Needs Review | 2 Subscriptions |
+| 12 | KeyVault | Azure Key Vault | 1 | ⚠️ Needs Review | 3 Subscriptions |
+| 13 | LoadBalancer | Azure Load Balancer | 1 | ⚠️ Needs Review | Schema only |
+| 14 | loganalytics | Log Analytics Workspace | 5 | ⚠️ Needs Review | Tenant + SIEM Sub |
+| 15 | NIC | Network Interface | 1 | ⚠️ Needs Review | AzureMetrics (19 NICs) |
+| 16 | NSG | Network Security Group | 2 | ⚠️ Needs Review | 2 Subscriptions |
+| 17 | PublicIP | Public IP Address | 3 | ⚠️ Needs Review | Event Hub only (not LA) |
+| 18 | RecoveryVault | Azure Recovery Services Vault | 9 | ⚠️ Needs Review | Multiple Subs |
+| 19 | SearchServices | Azure Cognitive Search | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
+| 20 | VNetGW | Virtual Network Gateway | 1 | ⚠️ Needs Review | ❌ Not Configured |
+| 21 | Workspace | AVD Workspace | 4 | ⚠️ Needs Review | 2 Subscriptions |
+| 22 | — | VNET Flow Logs | 2 | ⚠️ Needs Review | Multiple Subs |
 
 ---
 
@@ -108,7 +108,7 @@ Single `AzureActivity` table entry. Activity Logs from all three scopes (root, M
 </details>
 
 <details>
-<summary><strong>3. Azure Automation Account</strong> (AA) — 1 entry — ✅ Complete</summary>
+<summary><strong>3. Azure Automation Account</strong> (AA) — 1 entry — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Automation Account diagnostic logs.
@@ -125,7 +125,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'AUTOMATIONACCOUNTS'
 </details>
 
 <details>
-<summary><strong>4. Azure Container Registry</strong> (ACR) — 2 entries — ✅ Complete</summary>
+<summary><strong>4. Azure Container Registry</strong> (ACR) — 2 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Container Registry diagnostic logs.
@@ -192,7 +192,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'SERVICE'`.
 </details>
 
 <details>
-<summary><strong>8. AVD AppGroup</strong> (AppGroup) — 3 entries — ✅ Complete</summary>
+<summary><strong>8. AVD AppGroup</strong> (AppGroup) — 3 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 AVD Application Group diagnostic logs (checkpoints, errors, management).
@@ -209,7 +209,7 @@ AVD Application Group diagnostic logs (checkpoints, errors, management).
 </details>
 
 <details>
-<summary><strong>9. Azure Application Gateway</strong> (ApplicationGateway) — 3 entries — ✅ Complete</summary>
+<summary><strong>9. Azure Application Gateway</strong> (ApplicationGateway) — 3 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Application Gateway access logs, firewall logs, performance logs.
@@ -228,7 +228,7 @@ Application Gateway access logs, firewall logs, performance logs.
 </details>
 
 <details>
-<summary><strong>10. Azure Firewall</strong> (Firewall) — 4 entries — ✅ Complete</summary>
+<summary><strong>10. Azure Firewall</strong> (Firewall) — 4 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
@@ -248,7 +248,7 @@ Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
 </details>
 
 <details>
-<summary><strong>11. Azure Virtual Desktop</strong> (HostPool) — 11 entries — ✅ Complete</summary>
+<summary><strong>11. Azure Virtual Desktop</strong> (HostPool) — 11 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Session host health, connection activity, agent logs — mapped to all 11 MS-supported HostPool diagnostic categories.
@@ -275,7 +275,7 @@ Session host health, connection activity, agent logs — mapped to all 11 MS-sup
 </details>
 
 <details>
-<summary><strong>12. Azure Key Vault</strong> (KeyVault) — 1 entry — ✅ Complete</summary>
+<summary><strong>12. Azure Key Vault</strong> (KeyVault) — 1 entry — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Key Vault diagnostic logs (audit events).
@@ -290,7 +290,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VAULTS'`. Customer 
 </details>
 
 <details>
-<summary><strong>13. Azure Load Balancer</strong> (LoadBalancer) — 1 entry — ✅ Complete</summary>
+<summary><strong>13. Azure Load Balancer</strong> (LoadBalancer) — 1 entry — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Health probe events, load balancer alert events.
@@ -307,7 +307,7 @@ Single resource-specific table entry. MS Learn confirms Load Balancer has only 1
 </details>
 
 <details>
-<summary><strong>14. Log Analytics Workspace</strong> (loganalytics) — 5 entries — ✅ Complete</summary>
+<summary><strong>14. Log Analytics Workspace</strong> (loganalytics) — 5 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Workspace audit logs for query activity, data access, and workspace management operations.
@@ -328,7 +328,7 @@ Workspace audit logs for query activity, data access, and workspace management o
 </details>
 
 <details>
-<summary><strong>15. Network Interface</strong> (NIC) — 1 entry — ✅ Complete</summary>
+<summary><strong>15. Network Interface</strong> (NIC) — 1 entry — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Effective network security group rules and flow data (supplementary to NSG flow logs).
@@ -347,7 +347,7 @@ Single AzureMetrics entry. NICs have **no diagnostic log categories** — only A
 </details>
 
 <details>
-<summary><strong>16. Network Security Group</strong> (NSG) — 2 entries — ✅ Complete</summary>
+<summary><strong>16. Network Security Group</strong> (NSG) — 2 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 NSG diagnostic logs (event and rule counter categories).
@@ -365,7 +365,7 @@ NSG diagnostic logs (event and rule counter categories).
 </details>
 
 <details>
-<summary><strong>17. Public IP Address</strong> (PublicIP) — 3 entries — ✅ Complete</summary>
+<summary><strong>17. Public IP Address</strong> (PublicIP) — 3 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 DDoS mitigation reports, DDoS protection alert logs (where applicable).
@@ -388,7 +388,7 @@ DDoS mitigation reports, DDoS protection alert logs (where applicable).
 </details>
 
 <details>
-<summary><strong>18. Azure Recovery Services Vault</strong> (RecoveryVault) — 9 entries — ✅ Complete</summary>
+<summary><strong>18. Azure Recovery Services Vault</strong> (RecoveryVault) — 9 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Recovery Services Vault backup and site recovery diagnostic logs.
@@ -411,7 +411,7 @@ Recovery Services Vault backup and site recovery diagnostic logs.
 </details>
 
 <details>
-<summary><strong>19. Azure Cognitive Search</strong> (SearchServices) — 1 entry — ✅ Complete</summary>
+<summary><strong>19. Azure Cognitive Search</strong> (SearchServices) — 1 entry — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Search Services diagnostic logs.
@@ -426,7 +426,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'SEARCHSERVICES'`.
 </details>
 
 <details>
-<summary><strong>20. Virtual Network Gateway</strong> (VNetGW) — 1 entry — ✅ Complete</summary>
+<summary><strong>20. Virtual Network Gateway</strong> (VNetGW) — 1 entry — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 VPN Gateway diagnostic logs (gateway, tunnel, route, IKE, P2S diagnostics).
@@ -443,7 +443,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VIRTUALNETWORKGATEW
 </details>
 
 <details>
-<summary><strong>21. AVD Workspace</strong> (Workspace) — 4 entries — ✅ Complete</summary>
+<summary><strong>21. AVD Workspace</strong> (Workspace) — 4 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 AVD Workspace diagnostic logs (feeds, management, checkpoints, errors).
@@ -463,7 +463,7 @@ AVD Workspace diagnostic logs (feeds, management, checkpoints, errors).
 </details>
 
 <details>
-<summary><strong>22. VNET Flow Logs</strong> — 2 entries — ✅ Complete</summary>
+<summary><strong>22. VNET Flow Logs</strong> — 2 entries — ⚠️ Needs Review</summary>
 
 ### Wiki Said
 Captures source/destination IP, port, protocol, traffic direction, and allow/deny disposition for all flows traversing VNets.
