@@ -62,6 +62,25 @@
 
 ---
 
+## How to Verify Using the Workbook
+
+> Use these steps for **every workload** listed below. The validation checkboxes in each section map to these steps.
+
+1. **Open the workbook** — Sentinel → Workbooks → "ATO Logging Validation"
+2. **Set the Workload filter** — Select the workload you are verifying from the dropdown
+3. **Check the bar chart** — Confirm the workload shows the expected mix of Ingesting / Configured / Not Configured
+4. **Expand the table** — Click the workload row to expand its child entries
+5. **For each table entry, verify:**
+   - **Configuration Status** — Should show ✅ Ingesting or ℹ️ Configured (not ❌ Not Configured)
+   - **ATO Status** — Should show "Pass" (Ingesting or Configured) or "Finding" (Not Configured)
+   - **Source Subscription** — Should show the correct subscription name or "Tenant" for tenant-level logs
+   - **Last Record** — Should show a recent date (within your selected time range)
+   - **Table** — Should match the expected Sentinel table listed in this tracker
+6. **Click a table row** to load the **Sample Data** panel — confirm real records appear
+7. **Compare the workbook results** against the "What We Deployed" table in each section below — every entry should match
+
+---
+
 ## Workload Details
 
 <details>
@@ -98,6 +117,9 @@ Entra ID diagnostic logs including sign-ins, audit, provisioning, identity prote
 ### Validation Checklist
 - [ ] Diagnostic settings on Entra ID confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source shown as "Tenant" in workbook confirmed accurate
 
 </details>
@@ -121,6 +143,9 @@ Single `AzureActivity` table entry. Activity Logs from all three scopes (root, M
 ### Validation Checklist
 - [ ] Activity Log export configured at subscription level for all in-scope subscriptions
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] All subscriptions visible in workbook Source column confirmed accurate
 
 </details>
@@ -146,6 +171,9 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'AUTOMATIONACCOUNTS'
 ### Validation Checklist
 - [ ] Diagnostic settings on Automation Account confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -170,6 +198,9 @@ Container Registry diagnostic logs.
 ### Validation Checklist
 - [ ] Diagnostic settings on ACR confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -195,6 +226,9 @@ Single resource-specific table entry.
 ### Validation Checklist
 - [ ] Diagnostic settings on Data Transfer resource confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 - [ ] Customer confirms resource is still active
 
@@ -222,6 +256,9 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'MANAGEDCLUSTERS'`. 
 ### Validation Checklist
 - [ ] Diagnostic settings on AKS clusters confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 - [ ] Customer confirms AKS clusters are still in use
 
@@ -249,6 +286,9 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'SERVICE'`.
 ### Validation Checklist
 - [ ] Diagnostic settings on APIM service confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 - [ ] Customer confirms APIM is still deployed
 
@@ -276,6 +316,9 @@ AVD Application Group diagnostic logs (checkpoints, errors, management).
 ### Validation Checklist
 - [ ] Diagnostic settings on AVD Application Groups confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -304,6 +347,9 @@ Application Gateway access logs, firewall logs, performance logs.
 ### Validation Checklist
 - [ ] Diagnostic settings on Application Gateway confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 - [ ] Confirm whether AppGW resources exist in tenant
 
@@ -335,6 +381,9 @@ Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
 ### Validation Checklist
 - [ ] Diagnostic settings on Azure Firewall confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 - [ ] IDPS: Confirm if Firewall Premium SKU is in scope for ATO
 
@@ -372,6 +421,9 @@ Session host health, connection activity, agent logs — mapped to all 11 MS-sup
 ### Validation Checklist
 - [ ] Diagnostic settings on AVD Host Pools confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -396,6 +448,9 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VAULTS'`. Customer 
 ### Validation Checklist
 - [ ] Diagnostic settings on Key Vaults confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -422,6 +477,9 @@ Single resource-specific table entry. MS Learn confirms Load Balancer has only 1
 ### Validation Checklist
 - [ ] Diagnostic settings on Load Balancers confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -454,6 +512,9 @@ Workspace audit logs for query activity, data access, and workspace management o
 - [ ] Diagnostic settings on LA Workspace confirmed sending to correct LA workspace
 - [ ] SentinelHealth and SentinelAudit tables enabled in Sentinel settings
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -482,6 +543,9 @@ Single AzureMetrics entry. NICs have **no diagnostic log categories** — only A
 ### Validation Checklist
 - [ ] Diagnostic settings on NICs confirmed sending AllMetrics to correct LA workspace
 - [ ] Workbook entries match AzureMetrics data flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -509,6 +573,9 @@ NSG diagnostic logs (event and rule counter categories).
 ### Validation Checklist
 - [ ] Diagnostic settings on NSGs confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -543,6 +610,9 @@ DDoS mitigation reports, DDoS protection alert logs (where applicable).
 - [ ] Diagnostic settings on Public IPs confirmed sending to correct LA workspace (not just Event Hub)
 - [ ] DDoS Protection Plan deployed and associated with VNets (if in scope)
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -576,6 +646,9 @@ Recovery Services Vault backup and site recovery diagnostic logs.
 - [ ] Diagnostic settings on Recovery Services Vaults confirmed sending to correct LA workspace
 - [ ] Resource-specific mode confirmed (not AzureDiagnostics)
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -600,6 +673,9 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'SEARCHSERVICES'`.
 ### Validation Checklist
 - [ ] Diagnostic settings on Search Service confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -626,6 +702,9 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VIRTUALNETWORKGATEW
 ### Validation Checklist
 - [ ] Diagnostic settings on Virtual Network Gateways confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 - [ ] Customer confirms VPN/ExpressRoute gateways exist in tenant
 
@@ -656,6 +735,9 @@ AVD Workspace diagnostic logs (feeds, management, checkpoints, errors).
 ### Validation Checklist
 - [ ] Diagnostic settings on AVD Workspaces confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
@@ -684,6 +766,9 @@ Captures source/destination IP, port, protocol, traffic direction, and allow/den
 - [ ] Network Watcher flow log configurations confirmed sending to correct Storage Account + Traffic Analytics
 - [ ] Traffic Analytics configured to forward to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
 - [ ] Source subscription in workbook matches resource location
 
 </details>
