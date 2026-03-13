@@ -30,7 +30,7 @@
 | 10 | Firewall | Azure Firewall | 4 | ✅ Complete | Platform Mgmt Sub |
 | 11 | HostPool | Azure Virtual Desktop | 11 | ✅ Complete | 2 Subscriptions |
 | 12 | KeyVault | Azure Key Vault | 1 | ❌ Not Configured | 3 Subscriptions |
-| 13 | LoadBalancer | Azure Load Balancer | 1 | ⚠️ Needs Review | Schema only |
+| 13 | LoadBalancer | Azure Load Balancer | 1 | ❌ Not Configured | Schema only |
 | 14 | loganalytics | Log Analytics Workspace | 5 | ⚠️ Needs Review | Tenant + SIEM Sub |
 | 15 | NIC | Network Interface | 1 | ⚠️ Needs Review | AzureMetrics (19 NICs) |
 | 16 | NSG | Network Security Group | 2 | ⚠️ Needs Review | 2 Subscriptions |
@@ -450,7 +450,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VAULTS'`. Customer 
 </details>
 
 <details>
-<summary><strong>13. Azure Load Balancer</strong> (LoadBalancer) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>13. Azure Load Balancer</strong> (LoadBalancer) — 1 entry — ❌ Not Configured</summary>
 
 ### Wiki Said
 Health probe events, load balancer alert events.
