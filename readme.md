@@ -20,12 +20,12 @@
 |---|-------------|----------|---------|--------|--------|
 | 1 | — | Entra ID | 12 | ✅ Complete | Tenant |
 | 2 | — | Azure Activity | 1 | ✅ Complete | 3 Subscriptions |
-| 3 | AA | Azure Automation Account | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
-| 4 | ACR | Azure Container Registry | 2 | ⚠️ Needs Review | Platform Mgmt Sub |
+| 3 | AA | Azure Automation Account | 1 | ❌ Not Configured | Platform Mgmt Sub |
+| 4 | ACR | Azure Container Registry | 2 | ❌ Not Configured | Platform Mgmt Sub |
 | 5 | ADT | Azure Data Transfer | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
-| 6 | AKS | Azure Kubernetes Service | 1 | ⚠️ Needs Review | Multiple Subs |
+| 6 | AKS | Azure Kubernetes Service | 1 | ❌ Not Configured | Multiple Subs |
 | 7 | APIMgmt | Azure API Management | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
-| 8 | AppGroup | AVD AppGroup | 3 | ⚠️ Needs Review | 2 Subscriptions |
+| 8 | AppGroup | AVD AppGroup | 3 | ✅ Complete | 2 Subscriptions |
 | 9 | ApplicationGateway | Azure Application Gateway | 3 | ⚠️ Needs Review | No resources deployed |
 | 10 | Firewall | Azure Firewall | 4 | ⚠️ Needs Review | Platform Mgmt Sub |
 | 11 | HostPool | Azure Virtual Desktop | 11 | ⚠️ Needs Review | 2 Subscriptions |
@@ -173,7 +173,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'AUTOMATIONACCOUNTS'
 </details>
 
 <details>
-<summary><strong>4. Azure Container Registry</strong> (ACR) — 2 entries — ⚠️ Needs Review</summary>
+<summary><strong>4. Azure Container Registry</strong> (ACR) — 2 entries — ❌ Not Configured</summary>
 
 ### Wiki Said
 Container Registry diagnostic logs.
@@ -229,7 +229,7 @@ Single resource-specific table entry.
 </details>
 
 <details>
-<summary><strong>6. Azure Kubernetes Service</strong> (AKS) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>6. Azure Kubernetes Service</strong> (AKS) — 1 entry — ❌ Not Configured</summary>
 
 ### Wiki Said
 AKS diagnostic logs including kube-audit, kube-audit-admin, kube-apiserver, kube-controller-manager, kube-scheduler, cluster-autoscaler, guard.
@@ -239,7 +239,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'MANAGEDCLUSTERS'`. 
 
 | Table | Display Name | Controls | Status | Source |
 |-------|-------------|----------|--------|--------|
-| AzureDiagnostics (MANAGEDCLUSTERS) | AKS Diagnostics | AU-2, AU-3, CM-6, SI-4 | ⚠️ Needs Review | Multiple Subs |
+| AzureDiagnostics (MANAGEDCLUSTERS) | AKS Diagnostics | AU-2, AU-3, CM-6, SI-4 | ❌ Not Configured | Multiple Subs |
 
 **Issue:** 122M historical records across 21 clusters, 11 categories. Last record 2025-12-09. Zero data in last 30 days. Customer follow-up needed — AKS clusters may have been decommissioned.
 
@@ -289,7 +289,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'SERVICE'`.
 </details>
 
 <details>
-<summary><strong>8. AVD AppGroup</strong> (AppGroup) — 3 entries — ⚠️ Needs Review</summary>
+<summary><strong>8. AVD AppGroup</strong> (AppGroup) — 3 entries — ✅ Complete</summary>
 
 ### Wiki Said
 AVD Application Group diagnostic logs (checkpoints, errors, management).
@@ -308,17 +308,17 @@ AVD Application Group diagnostic logs (checkpoints, errors, management).
 📄 [Supported AppGroup logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-desktopvirtualization-applicationgroups-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on AVD Application Groups confirmed sending to correct LA workspace
-- [ ] Workbook entries match tables flowing in workspace
-- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [ ] Click a table row → Sample Data panel shows actual records
-- [ ] Source subscription in workbook matches resource location
+- [x] Diagnostic settings on AVD Application Groups confirmed sending to correct LA workspace
+- [x] Workbook entries match tables flowing in workspace
+- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [x] Click a table row → Sample Data panel shows actual records
+- [x] Source subscription in workbook matches resource location
 
 </details>
 
 <details>
-<summary><strong>9. Azure Application Gateway</strong> (ApplicationGateway) — 3 entries — ⚠️ Needs Review</summary>
+<summary><strong>9. Azure Application Gateway</strong> (ApplicationGateway) — 3 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Application Gateway access logs, firewall logs, performance logs.
@@ -339,13 +339,13 @@ Application Gateway access logs, firewall logs, performance logs.
 📄 [Supported AppGW logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-network-applicationgateways-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Application Gateway confirmed sending to correct LA workspace
-- [ ] Workbook entries match tables flowing in workspace
-- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [ ] Click a table row → Sample Data panel shows actual records
-- [ ] Source subscription in workbook matches resource location
-- [ ] Confirm whether AppGW resources exist in tenant
+- [x] Diagnostic settings on Application Gateway confirmed sending to correct LA workspace
+- [x] Workbook entries match tables flowing in workspace
+- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [x] Click a table row → Sample Data panel shows actual records
+- [x] Source subscription in workbook matches resource location
+- [x] Confirm whether AppGW resources exist in tenant
 
 </details>
 
