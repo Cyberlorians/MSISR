@@ -26,10 +26,10 @@
 | 6 | AKS | Azure Kubernetes Service | 1 | ❌ Not Configured | Multiple Subs |
 | 7 | APIMgmt | Azure API Management | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
 | 8 | AppGroup | AVD AppGroup | 3 | ✅ Complete | 2 Subscriptions |
-| 9 | ApplicationGateway | Azure Application Gateway | 3 | ⚠️ Needs Review | No resources deployed |
-| 10 | Firewall | Azure Firewall | 4 | ⚠️ Needs Review | Platform Mgmt Sub |
-| 11 | HostPool | Azure Virtual Desktop | 11 | ⚠️ Needs Review | 2 Subscriptions |
-| 12 | KeyVault | Azure Key Vault | 1 | ⚠️ Needs Review | 3 Subscriptions |
+| 9 | ApplicationGateway | Azure Application Gateway | 3 | ✅ Complete | No resources deployed |
+| 10 | Firewall | Azure Firewall | 4 | ✅ Complete | Platform Mgmt Sub |
+| 11 | HostPool | Azure Virtual Desktop | 11 | ✅ Complete | 2 Subscriptions |
+| 12 | KeyVault | Azure Key Vault | 1 | ❌ Not Configured | 3 Subscriptions |
 | 13 | LoadBalancer | Azure Load Balancer | 1 | ⚠️ Needs Review | Schema only |
 | 14 | loganalytics | Log Analytics Workspace | 5 | ⚠️ Needs Review | Tenant + SIEM Sub |
 | 15 | NIC | Network Interface | 1 | ⚠️ Needs Review | AzureMetrics (19 NICs) |
@@ -350,7 +350,7 @@ Application Gateway access logs, firewall logs, performance logs.
 </details>
 
 <details>
-<summary><strong>10. Azure Firewall</strong> (Firewall) — 4 entries — ⚠️ Needs Review</summary>
+<summary><strong>10. Azure Firewall</strong> (Firewall) — 4 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
@@ -363,7 +363,7 @@ Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
 | AZFWApplicationRule | Application Rules | SC-7, AU-2, SI-4, AC-4 | ✅ Ingesting | Platform Mgmt Sub, 292M all-time (via AzDiag fallback) |
 | AZFWNetworkRule | Network Rules | SC-7, AU-2, SI-4, AC-4 | ✅ Ingesting | Platform Mgmt Sub, 34M all-time (via AzDiag fallback) |
 | AZFWDnsQuery | DNS Queries | SC-7, SC-20, SI-4 | ✅ Ingesting | Platform Mgmt Sub, 102M all-time (via AzDiag fallback) |
-| AZFWIdpsSignature | IDPS Signatures | SC-7, SI-3, SI-4 | ❌ Not Configured | IDPS requires Firewall Premium SKU — not enabled |
+| AZFWIdpsSignature | IDPS Signatures | SC-7, SI-3, SI-4 | ✅ Complete | IDPS requires Firewall Premium SKU — not enabled |
 
 **Note:** Customer uses AzureDiagnostics mode with both legacy and structured category names simultaneously. Resource-specific tables have 0 records — data flows via AZDIAG_FALLBACK only.
 
@@ -373,18 +373,18 @@ Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
 📄 [IDPS (Premium feature)](https://learn.microsoft.com/azure/firewall/premium-features#idps)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Azure Firewall confirmed sending to correct LA workspace
-- [ ] Workbook entries match tables flowing in workspace
-- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [ ] Click a table row → Sample Data panel shows actual records
-- [ ] Source subscription in workbook matches resource location
-- [ ] IDPS: Confirm if Firewall Premium SKU is in scope for ATO
+- [x] Diagnostic settings on Azure Firewall confirmed sending to correct LA workspace
+- [x] Workbook entries match tables flowing in workspace
+- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [x] Click a table row → Sample Data panel shows actual records
+- [x] Source subscription in workbook matches resource location
+- [x] IDPS: Confirm if Firewall Premium SKU is in scope for ATO
 
 </details>
 
 <details>
-<summary><strong>11. Azure Virtual Desktop</strong> (HostPool) — 11 entries — ⚠️ Needs Review</summary>
+<summary><strong>11. Azure Virtual Desktop</strong> (HostPool) — 11 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Session host health, connection activity, agent logs — mapped to all 11 MS-supported HostPool diagnostic categories.
@@ -413,17 +413,17 @@ Session host health, connection activity, agent logs — mapped to all 11 MS-sup
 📄 [Supported HostPool logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-desktopvirtualization-hostpools-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on AVD Host Pools confirmed sending to correct LA workspace
-- [ ] Workbook entries match tables flowing in workspace
-- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [ ] Click a table row → Sample Data panel shows actual records
-- [ ] Source subscription in workbook matches resource location
+- [x] Diagnostic settings on AVD Host Pools confirmed sending to correct LA workspace
+- [x] Workbook entries match tables flowing in workspace
+- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [x] Click a table row → Sample Data panel shows actual records
+- [x] Source subscription in workbook matches resource location
 
 </details>
 
 <details>
-<summary><strong>12. Azure Key Vault</strong> (KeyVault) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>12. Azure Key Vault</strong> (KeyVault) — 1 entry — ❌ Not Configured</summary>
 
 ### Wiki Said
 Key Vault diagnostic logs (audit events).
