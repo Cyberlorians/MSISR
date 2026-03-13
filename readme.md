@@ -135,17 +135,17 @@ Single `AzureActivity` table entry. Activity Logs from all three scopes (root, M
 📄 [Azure Activity Log](https://learn.microsoft.com/azure/azure-monitor/essentials/activity-log)
 
 ### Validation Checklist
-- [ ] Activity Log export configured at subscription level for all in-scope subscriptions
-- [ ] Workbook entries match tables flowing in workspace
-- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [ ] Click a table row → Sample Data panel shows actual records
-- [ ] All subscriptions visible in workbook Source column confirmed accurate
+- [x] Activity Log export configured at subscription level for all in-scope subscriptions
+- [x] Workbook entries match tables flowing in workspace
+- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [x] Click a table row → Sample Data panel shows actual records
+- [x] All subscriptions visible in workbook Source column confirmed accurate
 
 </details>
 
 <details>
-<summary><strong>3. Azure Automation Account</strong> (AA) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>3. Azure Automation Account</strong> (AA) — 1 entry — ❌ Not Configured - Diagnostics not enabled on Azure Automation Account as described by MSISR Wiki </summary>
 
 ### Wiki Said
 Automation Account diagnostic logs.
