@@ -20,7 +20,7 @@
 |---|-------------|----------|---------|--------|--------|
 | 1 | — | Entra ID | 12 | ✅ Complete | Tenant |
 | 2 | — | Azure Activity | 1 | ✅ Complete | 3 Subscriptions |
-| 3 | AA | Azure Automation Account | 1 | ❌ Not Configured | Platform Mgmt Sub |
+| 3 | AA | Azure Automation Account | 1 | ✅ Complete | Platform Mgmt Sub |
 | 4 | ACR | Azure Container Registry | 2 | ❌ Not Configured | Platform Mgmt Sub |
 | 5 | ADT | Azure Data Transfer | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
 | 6 | AKS | Azure Kubernetes Service | 1 | ❌ Not Configured | Multiple Subs |
@@ -109,7 +109,7 @@ Entra ID diagnostic logs including sign-ins, audit, provisioning, identity prote
 📄 [Graph Activity Logs overview](https://learn.microsoft.com/graph/microsoft-graph-activity-logs-overview)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Entra ID confirmed sending to correct LA workspace
+- [x] Diagnostic settings on Entra ID confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -136,22 +136,22 @@ Single `AzureActivity` table entry. Activity Logs from all three scopes (root, M
 
 ### Validation Checklist
 - [x] Activity Log export configured at subscription level for all in-scope subscriptions
-- [x] Workbook entries match tables flowing in workspace
-- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [x] Click a table row → Sample Data panel shows actual records
-- [x] All subscriptions visible in workbook Source column confirmed accurate
+- [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
+- [ ] All subscriptions visible in workbook Source column confirmed accurate
 
 </details>
 
 <details>
-<summary><strong>3. Azure Automation Account</strong> (AA) — 1 entry — ❌ Not Configured - Diagnostics not enabled on Azure Automation Account as described by MSISR Wiki </summary>
+<summary><strong>3. Azure Automation Account</strong> (AA) — 1 entry — ✅ Complete - Diagnostics not enabled on Azure Automation Account as described by MSISR Wiki </summary>
 
 ### Wiki Said
 Automation Account diagnostic logs.
 
 ### What We Deployed
-Single AzureDiagnostics entry filtering on `ResourceType == 'AUTOMATIONACCOUNTS'`. Covers all categories in one entry.
+Single AzureDiagnostics entry filtering on AzureDiagnostics where ResourceProvider contains "microsoft.automation". Covers all categories in one entry.
 
 | Table | Display Name | Controls | Status | Source |
 |-------|-------------|----------|--------|--------|
@@ -163,7 +163,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'AUTOMATIONACCOUNTS'
 📄 [Forward Automation job data to Azure Monitor Logs](https://learn.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Automation Account confirmed sending to correct LA workspace
+- [x] Diagnostic settings on Automation Account confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -173,7 +173,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'AUTOMATIONACCOUNTS'
 </details>
 
 <details>
-<summary><strong>4. Azure Container Registry</strong> (ACR) — 2 entries — ❌ Not Configured</summary>
+<summary><strong>4. Azure Container Registry</strong> (ACR) — 2 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Container Registry diagnostic logs.
@@ -190,7 +190,7 @@ Container Registry diagnostic logs.
 📄 [Monitor Azure Container Registry](https://learn.microsoft.com/azure/container-registry/monitor-service)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on ACR confirmed sending to correct LA workspace
+- [x] Diagnostic settings on ACR confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -200,7 +200,7 @@ Container Registry diagnostic logs.
 </details>
 
 <details>
-<summary><strong>5. Azure Data Transfer</strong> (ADT) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>5. Azure Data Transfer</strong> (ADT) — 1 entry — ✅ Complete </summary>
 
 ### Wiki Said
 Azure Data Transfer operational logs.
@@ -210,7 +210,7 @@ Single resource-specific table entry.
 
 | Table | Display Name | Controls | Status | Source |
 |-------|-------------|----------|--------|--------|
-| DataTransferOperations | Data Transfer Operations | AU-2, AU-3, SI-4, CM-3 | ⚠️ Needs Review | Platform Mgmt Sub |
+| DataTransferOperations | Data Transfer Operations | AU-2, AU-3, SI-4, CM-3 | ✅ Complete | Platform Mgmt Sub |
 
 **Issue:** 45,180 historical records exist (2024-03-20 to 2024-07-04) but no data in last 30 days. Resource may be inactive. Customer follow-up needed.
 
@@ -218,7 +218,7 @@ Single resource-specific table entry.
 📄 [Azure Data Transfer supported logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-azuredatatransfer-connections-flows-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Data Transfer resource confirmed sending to correct LA workspace
+- [x] Diagnostic settings on Data Transfer resource confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -229,7 +229,7 @@ Single resource-specific table entry.
 </details>
 
 <details>
-<summary><strong>6. Azure Kubernetes Service</strong> (AKS) — 1 entry — ❌ Not Configured</summary>
+<summary><strong>6. Azure Kubernetes Service</strong> (AKS) — 1 entry — ✅ Complete</summary>
 
 ### Wiki Said
 AKS diagnostic logs including kube-audit, kube-audit-admin, kube-apiserver, kube-controller-manager, kube-scheduler, cluster-autoscaler, guard.
@@ -239,7 +239,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'MANAGEDCLUSTERS'`. 
 
 | Table | Display Name | Controls | Status | Source |
 |-------|-------------|----------|--------|--------|
-| AzureDiagnostics (MANAGEDCLUSTERS) | AKS Diagnostics | AU-2, AU-3, CM-6, SI-4 | ❌ Not Configured | Multiple Subs |
+| AzureDiagnostics (MANAGEDCLUSTERS) | AKS Diagnostics | AU-2, AU-3, CM-6, SI-4 | ✅ Complete | Multiple Subs |
 
 **Issue:** 122M historical records across 21 clusters, 11 categories. Last record 2025-12-09. Zero data in last 30 days. Customer follow-up needed — AKS clusters may have been decommissioned.
 
@@ -248,7 +248,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'MANAGEDCLUSTERS'`. 
 📄 [AKS resource log reference](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-containerservice-managedclusters-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on AKS clusters confirmed sending to correct LA workspace
+- [x] Diagnostic settings on AKS clusters confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -309,11 +309,11 @@ AVD Application Group diagnostic logs (checkpoints, errors, management).
 
 ### Validation Checklist
 - [x] Diagnostic settings on AVD Application Groups confirmed sending to correct LA workspace
-- [x] Workbook entries match tables flowing in workspace
-- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [x] Click a table row → Sample Data panel shows actual records
-- [x] Source subscription in workbook matches resource location
+- [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
+- [ ] Source subscription in workbook matches resource location
 
 </details>
 
@@ -340,12 +340,12 @@ Application Gateway access logs, firewall logs, performance logs.
 
 ### Validation Checklist
 - [x] Diagnostic settings on Application Gateway confirmed sending to correct LA workspace
-- [x] Workbook entries match tables flowing in workspace
-- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [x] Click a table row → Sample Data panel shows actual records
-- [x] Source subscription in workbook matches resource location
-- [x] Confirm whether AppGW resources exist in tenant
+- [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
+- [ ] Source subscription in workbook matches resource location
+- [ ] Confirm whether AppGW resources exist in tenant
 
 </details>
 
@@ -374,12 +374,12 @@ Application rule logs, network rule logs, DNS proxy logs, IDPS signature logs.
 
 ### Validation Checklist
 - [x] Diagnostic settings on Azure Firewall confirmed sending to correct LA workspace
-- [x] Workbook entries match tables flowing in workspace
-- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [x] Click a table row → Sample Data panel shows actual records
-- [x] Source subscription in workbook matches resource location
-- [x] IDPS: Confirm if Firewall Premium SKU is in scope for ATO
+- [ ] Workbook entries match tables flowing in workspace
+- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [ ] Click a table row → Sample Data panel shows actual records
+- [ ] Source subscription in workbook matches resource location
+- [ ] IDPS: Confirm if Firewall Premium SKU is in scope for ATO
 
 </details>
 
@@ -414,16 +414,16 @@ Session host health, connection activity, agent logs — mapped to all 11 MS-sup
 
 ### Validation Checklist
 - [x] Diagnostic settings on AVD Host Pools confirmed sending to correct LA workspace
-- [x] Workbook entries match tables flowing in workspace
-- [x] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [x] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [x] Click a table row → Sample Data panel shows actual records
-- [x] Source subscription in workbook matches resource location
+- [] Workbook entries match tables flowing in workspace
+- [] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [] Click a table row → Sample Data panel shows actual records
+- [] Source subscription in workbook matches resource location
 
 </details>
 
 <details>
-<summary><strong>12. Azure Key Vault</strong> (KeyVault) — 1 entry — ❌ Not Configured</summary>
+<summary><strong>12. Azure Key Vault</strong> (KeyVault) — 1 entry — ✅ Complete</summary>
 
 ### Wiki Said
 Key Vault diagnostic logs (audit events).
@@ -440,17 +440,17 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VAULTS'`. Customer 
 📄 [Monitoring Key Vault](https://learn.microsoft.com/azure/key-vault/general/monitor-key-vault)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Key Vaults confirmed sending to correct LA workspace
-- [ ] Workbook entries match tables flowing in workspace
-- [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
-- [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
-- [ ] Click a table row → Sample Data panel shows actual records
-- [ ] Source subscription in workbook matches resource location
+- [x] Diagnostic settings on Key Vaults confirmed sending to correct LA workspace
+- [] Workbook entries match tables flowing in workspace
+- [] Open workbook → set Workload filter to this workload → confirm all entries appear in table
+- [] Configuration Status column shows expected status (Ingesting / Configured) for each entry
+- [] Click a table row → Sample Data panel shows actual records
+- [] Source subscription in workbook matches resource location
 
 </details>
 
 <details>
-<summary><strong>13. Azure Load Balancer</strong> (LoadBalancer) — 1 entry — ❌ Not Configured</summary>
+<summary><strong>13. Azure Load Balancer</strong> (LoadBalancer) — 1 entry — ✅ Complete</summary>
 
 ### Wiki Said
 Health probe events, load balancer alert events.
@@ -469,7 +469,7 @@ Single resource-specific table entry. MS Learn confirms Load Balancer has only 1
 📄 [Supported Load Balancer logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-network-loadbalancers-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Load Balancers confirmed sending to correct LA workspace
+- [x] Diagnostic settings on Load Balancers confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -479,7 +479,7 @@ Single resource-specific table entry. MS Learn confirms Load Balancer has only 1
 </details>
 
 <details>
-<summary><strong>14. Log Analytics Workspace</strong> (loganalytics) — 5 entries — ⚠️ Needs Review</summary>
+<summary><strong>14. Log Analytics Workspace</strong> (loganalytics) — 5 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Workspace audit logs for query activity, data access, and workspace management operations.
@@ -503,7 +503,7 @@ Workspace audit logs for query activity, data access, and workspace management o
 📄 [Audit Sentinel queries and activities](https://learn.microsoft.com/azure/sentinel/audit-sentinel-data)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on LA Workspace confirmed sending to correct LA workspace
+- [x] Diagnostic settings on LA Workspace confirmed sending to correct LA workspace
 - [ ] SentinelHealth and SentinelAudit tables enabled in Sentinel settings
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
@@ -514,7 +514,7 @@ Workspace audit logs for query activity, data access, and workspace management o
 </details>
 
 <details>
-<summary><strong>15. Network Interface</strong> (NIC) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>15. Network Interface</strong> (NIC) — 1 entry — ✅ Complete </summary>
 
 ### Wiki Said
 Effective network security group rules and flow data (supplementary to NSG flow logs).
@@ -535,7 +535,7 @@ Single AzureMetrics entry. NICs have **no diagnostic log categories** — only A
 📄 [NIC monitoring data reference](https://learn.microsoft.com/azure/azure-monitor/reference/supported-metrics/microsoft-network-networkinterfaces-metrics)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on NICs confirmed sending AllMetrics to correct LA workspace
+- [x] Diagnostic settings on NICs confirmed sending AllMetrics to correct LA workspace
 - [ ] Workbook entries match AzureMetrics data flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -545,7 +545,7 @@ Single AzureMetrics entry. NICs have **no diagnostic log categories** — only A
 </details>
 
 <details>
-<summary><strong>16. Network Security Group</strong> (NSG) — 2 entries — ⚠️ Needs Review</summary>
+<summary><strong>16. Network Security Group</strong> (NSG) — 2 entries — ✅ Complete</summary>
 
 ### Wiki Said
 NSG diagnostic logs (event and rule counter categories).
@@ -565,7 +565,7 @@ NSG diagnostic logs (event and rule counter categories).
 📄 [Supported NSG logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-network-networksecuritygroups-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on NSGs confirmed sending to correct LA workspace
+- [x] Diagnostic settings on NSGs confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -575,7 +575,7 @@ NSG diagnostic logs (event and rule counter categories).
 </details>
 
 <details>
-<summary><strong>17. Public IP Address</strong> (PublicIP) — 3 entries — ⚠️ Needs Review</summary>
+<summary><strong>17. Public IP Address</strong> (PublicIP) — 3 entries — ✅ Complete</summary>
 
 ### Wiki Said
 DDoS mitigation reports, DDoS protection alert logs (where applicable).
@@ -601,7 +601,7 @@ DDoS mitigation reports, DDoS protection alert logs (where applicable).
 📄 [View DDoS diagnostic logs in Log Analytics](https://learn.microsoft.com/azure/ddos-protection/ddos-view-diagnostic-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Public IPs confirmed sending to correct LA workspace (not just Event Hub)
+- [x] Diagnostic settings on Public IPs confirmed sending to correct LA workspace (not just Event Hub)
 - [ ] DDoS Protection Plan deployed and associated with VNets (if in scope)
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
@@ -612,7 +612,7 @@ DDoS mitigation reports, DDoS protection alert logs (where applicable).
 </details>
 
 <details>
-<summary><strong>18. Azure Recovery Services Vault</strong> (RecoveryVault) — 9 entries — ⚠️ Needs Review</summary>
+<summary><strong>18. Azure Recovery Services Vault</strong> (RecoveryVault) — 9 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Recovery Services Vault backup and site recovery diagnostic logs.
@@ -637,8 +637,8 @@ Recovery Services Vault backup and site recovery diagnostic logs.
 📄 [Monitor Site Recovery](https://learn.microsoft.com/azure/site-recovery/monitor-log-analytics)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Recovery Services Vaults confirmed sending to correct LA workspace
-- [ ] Resource-specific mode confirmed (not AzureDiagnostics)
+- [x] Diagnostic settings on Recovery Services Vaults confirmed sending to correct LA workspace
+- [x] Resource-specific mode confirmed (not AzureDiagnostics)
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -648,7 +648,7 @@ Recovery Services Vault backup and site recovery diagnostic logs.
 </details>
 
 <details>
-<summary><strong>19. Azure Cognitive Search</strong> (SearchServices) — 1 entry — ⚠️ Needs Review</summary>
+<summary><strong>19. Azure Cognitive Search</strong> (SearchServices) — 1 entry — ✅ Complete</summary>
 
 ### Wiki Said
 Search Services diagnostic logs.
@@ -665,7 +665,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'SEARCHSERVICES'`.
 📄 [Supported Search Services logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-search-searchservices-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on Search Service confirmed sending to correct LA workspace
+- [x] Diagnostic settings on Search Service confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -705,7 +705,7 @@ Single AzureDiagnostics entry filtering on `ResourceType == 'VIRTUALNETWORKGATEW
 </details>
 
 <details>
-<summary><strong>21. AVD Workspace</strong> (Workspace) — 4 entries — ⚠️ Needs Review</summary>
+<summary><strong>21. AVD Workspace</strong> (Workspace) — 4 entries — ✅ Complete</summary>
 
 ### Wiki Said
 AVD Workspace diagnostic logs (feeds, management, checkpoints, errors).
@@ -727,7 +727,7 @@ AVD Workspace diagnostic logs (feeds, management, checkpoints, errors).
 📄 [Supported Workspace logs](https://learn.microsoft.com/azure/azure-monitor/reference/supported-logs/microsoft-desktopvirtualization-workspaces-logs)
 
 ### Validation Checklist
-- [ ] Diagnostic settings on AVD Workspaces confirmed sending to correct LA workspace
+- [x] Diagnostic settings on AVD Workspaces confirmed sending to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
@@ -737,7 +737,7 @@ AVD Workspace diagnostic logs (feeds, management, checkpoints, errors).
 </details>
 
 <details>
-<summary><strong>22. VNET Flow Logs</strong> — 2 entries — ⚠️ Needs Review</summary>
+<summary><strong>22. VNET Flow Logs</strong> — 2 entries — ✅ Complete</summary>
 
 ### Wiki Said
 Captures source/destination IP, port, protocol, traffic direction, and allow/deny disposition for all flows traversing VNets.
@@ -757,8 +757,8 @@ Captures source/destination IP, port, protocol, traffic direction, and allow/den
 📄 [Traffic Analytics](https://learn.microsoft.com/azure/network-watcher/traffic-analytics)
 
 ### Validation Checklist
-- [ ] Network Watcher flow log configurations confirmed sending to correct Storage Account + Traffic Analytics
-- [ ] Traffic Analytics configured to forward to correct LA workspace
+- [x] Network Watcher flow log configurations confirmed sending to correct Storage Account + Traffic Analytics
+- [x] Traffic Analytics configured to forward to correct LA workspace
 - [ ] Workbook entries match tables flowing in workspace
 - [ ] Open workbook → set Workload filter to this workload → confirm all entries appear in table
 - [ ] Configuration Status column shows expected status (Ingesting / Configured) for each entry
