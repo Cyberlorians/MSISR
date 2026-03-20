@@ -21,25 +21,25 @@
 | 1 | — | Entra ID | 12 | ✅ Complete | Tenant |
 | 2 | — | Azure Activity | 1 | ✅ Complete | 3 Subscriptions |
 | 3 | AA | Azure Automation Account | 1 | ✅ Complete | Platform Mgmt Sub |
-| 4 | ACR | Azure Container Registry | 2 | ❌ Not Configured | Platform Mgmt Sub |
-| 5 | ADT | Azure Data Transfer | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
-| 6 | AKS | Azure Kubernetes Service | 1 | ❌ Not Configured | Multiple Subs |
-| 7 | APIMgmt | Azure API Management | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
+| 4 | ACR | Azure Container Registry | 2 | ✅ Complete | Platform Mgmt Sub |
+| 5 | ADT | Azure Data Transfer | 1 | ✅ Complete | Platform Mgmt Sub |
+| 6 | AKS | Azure Kubernetes Service | 1 | ✅ Completed | Multiple Subs |
+| 7 | APIMgmt | Azure API Management | 1 | ✅ Complete | Platform Mgmt Sub |
 | 8 | AppGroup | AVD AppGroup | 3 | ✅ Complete | 2 Subscriptions |
 | 9 | ApplicationGateway | Azure Application Gateway | 3 | ✅ Complete | No resources deployed |
 | 10 | Firewall | Azure Firewall | 4 | ✅ Complete | Platform Mgmt Sub |
 | 11 | HostPool | Azure Virtual Desktop | 11 | ✅ Complete | 2 Subscriptions |
-| 12 | KeyVault | Azure Key Vault | 1 | ❌ Not Configured | 3 Subscriptions |
-| 13 | LoadBalancer | Azure Load Balancer | 1 | ❌ Not Configured | Schema only |
-| 14 | loganalytics | Log Analytics Workspace | 5 | ⚠️ Needs Review | Tenant + SIEM Sub |
-| 15 | NIC | Network Interface | 1 | ⚠️ Needs Review | AzureMetrics (19 NICs) |
-| 16 | NSG | Network Security Group | 2 | ⚠️ Needs Review | 2 Subscriptions |
-| 17 | PublicIP | Public IP Address | 3 | ⚠️ Needs Review | Event Hub only (not LA) |
-| 18 | RecoveryVault | Azure Recovery Services Vault | 9 | ⚠️ Needs Review | Multiple Subs |
-| 19 | SearchServices | Azure Cognitive Search | 1 | ⚠️ Needs Review | Platform Mgmt Sub |
+| 12 | KeyVault | Azure Key Vault | 1 | ✅ Complete | 3 Subscriptions |
+| 13 | LoadBalancer | Azure Load Balancer | 1 | ✅ Complete | Schema only |
+| 14 | loganalytics | Log Analytics Workspace | 5 | ✅ Complete | Tenant + SIEM Sub |
+| 15 | NIC | Network Interface | 1 | ✅ Complete | AzureMetrics (19 NICs) |
+| 16 | NSG | Network Security Group | 2 | ✅ Complete | 2 Subscriptions |
+| 17 | PublicIP | Public IP Address | 3 | ✅ Complete | Event Hub only (not LA) |
+| 18 | RecoveryVault | Azure Recovery Services Vault | 9 | ✅ Complete | Multiple Subs |
+| 19 | SearchServices | Azure Cognitive Search | 1 | ✅ Complete | Platform Mgmt Sub |
 | 20 | VNetGW | Virtual Network Gateway | 1 | ⚠️ Needs Review | ❌ Not Configured |
-| 21 | Workspace | AVD Workspace | 4 | ⚠️ Needs Review | 2 Subscriptions |
-| 22 | — | VNET Flow Logs | 2 | ⚠️ Needs Review | Multiple Subs |
+| 21 | Workspace | AVD Workspace | 4 | ✅ Complete | 2 Subscriptions |
+| 22 | — | VNET Flow Logs | 2 | ✅ Complete | Multiple Subs |
 
 ---
 
