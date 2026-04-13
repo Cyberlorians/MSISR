@@ -18,7 +18,7 @@ The workbook queries your Log Analytics workspace and compares what **should** b
 | **Configured** | Review | The table schema exists but no records were found in the selected time range — verify diagnostic settings are still active |
 | **Not Configured** | Finding | The table does not exist in the workspace schema — diagnostic settings need to be enabled |
 
-### Features
+## Features
 
 - **Coverage bar chart** — Stacked bar chart showing Ingesting (green), Configured (yellow), and Not Configured (red) counts per workload
 - **Filterable parameters** — Subscription, Workspace, Time Range, Workload, NIST Control Family, Table, Status, and Audit Result
@@ -26,11 +26,11 @@ The workbook queries your Log Analytics workspace and compares what **should** b
 - **Sample data panel** — Click any row to load the 50 most recent records from that table, with automatic actor/identity resolution (UPN, service principal, managed identity, or GUID → display name lookup)
 - **Excel export** — Export the full table for offline evidence documentation
 
-### Azure Workloads Covered
+## Azure Workloads Covered
 
 Entra ID, Azure Activity, Automation Account, Container Registry, Data Transfer, AKS, API Management, AVD (Host Pool, AppGroup, Workspace), Application Gateway, Azure Firewall, Key Vault, Load Balancer, Log Analytics / Sentinel, Network Interface, NSG, Public IP (DDoS), Recovery Services Vault (Backup + Site Recovery), Cognitive Search, Virtual Network Gateway, and VNET Flow Logs.
 
-### NIST 800-53 Control Families
+## NIST 800-53 Control Families
 
 Each log source is mapped to one or more control families:
 
@@ -48,3 +48,4 @@ Each log source is mapped to one or more control families:
 
 ---
 
+> ⚠️ **Disclaimer:** This workbook is an operational aid for validating log ingestion status. It does not replace your security assessment, System Security Plan (SSP), or formal ATO package requirements.
