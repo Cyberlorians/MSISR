@@ -52,32 +52,16 @@ Each log source is mapped to one or more control families:
 
 | File | Purpose |
 |------|---------|
-| `msisr.json` | The Sentinel workbook definition (JSON). This is what gets deployed to Azure. |
-| `deploy_workbook.ps1` | PowerShell script to deploy the workbook via `Invoke-AzRestMethod` to Azure Government |
-| `generate_workbook.py` | Python script that can regenerate the workbook JSON from structured inputs |
+| `msisr.json` | The Sentinel workbook definition (JSON). Copy this into the Sentinel workbook editor. |
 | `component_nist_mapping.csv` | CSV mapping of Azure workloads → log sources → NIST controls |
 | `grounding/` | Reference documents: MS-ISR default logging baseline and NIST 800-53 control descriptions |
 | `LOG_VALIDATION_TRACKER.md` | Tracking document for log source validation progress |
 
-## Deployment
+## Installation
 
-### Prerequisites
-
-- Azure PowerShell module (`Az`) authenticated to your Azure Government tenant
-- Contributor or Workbook Contributor role on the target resource group
-- A Log Analytics workspace with Microsoft Sentinel enabled
-
-### Deploy
-
-1. Update `deploy_workbook.ps1` with your subscription ID, resource group, workspace resource ID, and workbook GUID
-2. Run:
-
-```powershell
-Connect-AzAccount -Environment AzureUSGovernment
-.\deploy_workbook.ps1
-```
-
-The workbook will appear under **Microsoft Sentinel → Workbooks → My workbooks**.
+1. In Microsoft Sentinel, go to **Workbooks → Add workbook → Advanced Editor**
+2. Paste the contents of `msisr.json` into the editor
+3. Click **Apply**, then **Save**
 
 ## How to Use
 
