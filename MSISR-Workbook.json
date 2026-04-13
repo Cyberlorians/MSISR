@@ -38,7 +38,8 @@
                     "additionalResourceOptions": [],
                     "includeAll": true,
                     "showDefault": false
-                  }
+                  },
+                  "value": []
                 },
                 {
                   "id": "4853246f-5135-4586-a6a0-9e88edd4534b",
@@ -60,7 +61,7 @@
                     "showDefault": false
                   },
                   "queryType": 1,
-                  "resourceType": "microsoft.operationalinsights/workspaces"
+                  "resourceType": "microsoft.resourcegraph/resources"
                 },
                 {
                   "id": "4d2aad49-d67d-4070-9fac-b0f14734b819",
@@ -146,7 +147,7 @@
               ],
               "style": "above",
               "queryType": 1,
-              "resourceType": "microsoft.operationalinsights/workspaces"
+              "resourceType": "microsoft.resourcegraph/resources"
             },
             "customWidth": "75",
             "name": "Global Parameters"
