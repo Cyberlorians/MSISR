@@ -36,9 +36,7 @@
                     "includeAll": true,
                     "showDefault": false
                   },
-                  "value": [
-                    ""
-                  ]
+                  "value": [ ]
                 },
                 {
                   "id": "4853246f-5135-4586-a6a0-9e88edd4534b",
@@ -61,10 +59,7 @@
                   },
                   "queryType": 1,
                   "resourceType": "microsoft.resourcegraph/resources",
-                  "value": [
-                    "
-                    "
-                  ]
+                  "value": []
                 },
                 {
                   "id": "4d2aad49-d67d-4070-9fac-b0f14734b819",
@@ -472,4 +467,10 @@
         "showBorder": true
       }
     }
-  ]
+  ],
+    "fallbackResourceIds": [
+    "/subscriptions/ac95a806-c9d3-49e7-83ee-7f82e88c2bd3/resourcegroups/rg-siem-shared-001/providers/microsoft.operationalinsights/workspaces/log-c3elz7-usgovvirginia-001"
+  ],
+  "fromTemplateId": "sentinel-UserWorkbook",
+  "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
